@@ -359,7 +359,7 @@ void AMainChar::MoveForward(float Value)
 
 void AMainChar::MoveRight(float Value)
 {
-// || (bMidAnimbAttacking ||)
+
 	if( (MovementStatus == EMovementStatus::EMS_Dead) ){return;}
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation = {0, Rotation.Yaw, 0};
