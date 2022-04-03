@@ -6,7 +6,7 @@
 #include "Item.h"
 #include "Coin_Item.generated.h"
  
-/**
+/** The basic coin class, child of AItem
  * 
  */
 UCLASS()

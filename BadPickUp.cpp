@@ -34,11 +34,9 @@ ABadPickUp::ABadPickUp()
 void ABadPickUp::BeginPlay()
 {
 	Super::BeginPlay();
-
 	
 	CollisionSphere->OnComponentBeginOverlap.AddDynamic(this, &ABadPickUp::OnOverlapBegin);
 	CollisionSphere->OnComponentEndOverlap.AddDynamic(this, &ABadPickUp::OnOverlapEnd);
-	
 }
 
 // Called every frame
@@ -47,7 +45,6 @@ void ABadPickUp::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	RunningTime = GetGameTimeSinceCreation();
-
 	if(bRotate)
 	{
 		FRotator Rotation = GetActorRotation();
@@ -60,29 +57,21 @@ void ABadPickUp::Tick(float DeltaTime)
 		float DeltaHeight = FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime);
 		ItemLocation.Z += DeltaHeight * 30;
 		SetActorLocation(ItemLocation);
-		
-		
 	}
-
-
-
 }
 
 void ABadPickUp::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("This is my Virtual void Good Pick Up On Overlap Begin function being called."));
+	UE_LOG(LogTemp, Warning, TEXT("This is my Virtual void Bad Pick Up On Overlap Begin function being called."));
 
 	if(OverlapEffect)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), OverlapEffect, GetActorLocation());
 	}
-
-
 	if(OverlapSound)
 	{
 		UGameplayStatics::PlaySound2D(this, OverlapSound);
 	}
-	
 		Destroy();
 }
 
