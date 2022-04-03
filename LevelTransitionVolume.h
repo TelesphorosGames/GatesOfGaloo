@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "LevelTransitionVolume.generated.h"
 
+/* Volume to move us between levels in the game
+ *
+ */
 UCLASS()
 class GATESOFGALOO_API ALevelTransitionVolume : public AActor
 {

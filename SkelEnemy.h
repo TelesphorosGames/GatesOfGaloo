@@ -2,44 +2,39 @@
 
 #pragma once
 
-#include "Weapon.h"
 #include "CoreMinimal.h"
 #include "Enemy.h"
 #include "SkelEnemy.generated.h"
 
-
-/**
+/** A Skeleton version of an enemy that inherits from our AEnemy class. Has functionality to spawn a weapon.
  * 
  */
+
 UCLASS()
 class GATESOFGALOO_API ASkelEnemy : public AEnemy
 {
 	GENERATED_BODY()
 
 	ASkelEnemy();
-
-	
-
 public:
+	virtual void BeginPlay() override;
 
-
-
-	void BeginPlay() override;
-
-	const class USkeletalMeshSocket* SwordSocket;
+	UPROPERTY()
+	const USkeletalMeshSocket* SwordSocket;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<AWeapon> WepClass;
 
-	void DeathEnd() override;	
+	virtual void DeathEnd() override;	
 
-	class AWeapon* Wep;
+	UPROPERTY(VisibleAnywhere)
+	AWeapon* Wep;
 
-	void SetEquippedEnemyWeapon(AWeapon* WepToSet) override;
+	virtual void SetEquippedEnemyWeapon(AWeapon* WepToSet) override;
 
-	AWeapon* GetEquippedEnemyWeapon() override;
+	virtual AWeapon* GetEquippedEnemyWeapon() override;
 
-	float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser) override;
+	virtual float TakeDamage(float DamageAmount, FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser) override;
 
 	virtual void NoMoreHealth(AActor* Causer) override;
 	

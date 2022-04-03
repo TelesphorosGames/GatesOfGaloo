@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "GoodPickUp.generated.h"
 
+/** This is a sibling of AItem that can be used as a base class for a good pick up
+ *  For full comments, see class AItem
+ */
 UCLASS()
 class GATESOFGALOO_API AGoodPickUp : public AActor
 {
@@ -20,13 +23,13 @@ public:
 
 	// Base Mesh Component
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	class UStaticMeshComponent* Mesh;
+	UStaticMeshComponent* Mesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "My Stuff | Particles")
-	class UParticleSystemComponent* IdleParticlesComp;
+	UParticleSystemComponent* IdleParticlesComp;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "My Stuff | Particles")
-	class UParticleSystem* OverlapEffect;
+	UParticleSystem* OverlapEffect;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "My Stuff | Sounds")
 	class USoundCue* OverlapSound;

@@ -6,7 +6,7 @@
 #include "Enemy.h"
 #include "SpiderEnemy.generated.h"
 
-/**
+/** A basic child of AEnemy set up for a spider version of an enemy.
  * 
  */
 UCLASS()
@@ -24,17 +24,6 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "My Stuff")
 	class UBoxComponent* SpiderCombatCollision;
-
-// private:
-
-// 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "My Stuff")
-// 	class UAnimMontage* CombatMontage;
-
-// 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "My Stuff")
-// 	bool bAttacking;
-	
-
-public:
  
 	virtual void BeginPlay() override;
 

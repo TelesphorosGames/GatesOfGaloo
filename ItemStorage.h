@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "ItemStorage.generated.h"
 
+/* Used to store our weapon for our game saves and level transitions 
+ *
+ */
 UCLASS()
 class GATESOFGALOO_API AItemStorage : public AActor
 {

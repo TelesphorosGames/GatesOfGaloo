@@ -6,6 +6,11 @@
 #include "GameFramework/Pawn.h"
 #include "Critter.generated.h"
 
+
+/* A very basic class that can be possessed by the player input component, but has limited functions.
+ * Simply a Pawn with camera and movement functionality 
+ */
+
 UCLASS()
 class GATESOFGALOO_API ACritter : public APawn
 {

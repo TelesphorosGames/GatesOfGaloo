@@ -6,7 +6,7 @@
 #include "GoodPickUp.h"
 #include "Health.generated.h"
 
-/**
+/** Can be used as a basic health pickup template
  * 
  */
 UCLASS()

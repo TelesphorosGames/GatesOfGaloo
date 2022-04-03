@@ -6,7 +6,7 @@
 #include "Item.h"
 #include "Hazard.generated.h"
 
-/** 
+/** A child of Item used to damage our character upon overlap 
  * 
  */
 UCLASS()
